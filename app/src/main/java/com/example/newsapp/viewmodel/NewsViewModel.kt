@@ -21,7 +21,6 @@ class NewsViewModel(
 
     var searchNews: MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
     var searchNewsPage = 1
-    var searchNewsResponse: NewsResponse? = null
 
     init {
         getBreakingNews("us")
@@ -34,7 +33,6 @@ class NewsViewModel(
     }
 
     fun searchNews(searchQuery: String) = viewModelScope.launch {
-        //searchNews = MutableLiveData()
         searchNews.postValue(Resource.Loading())
         val response = newsRepository.searchNews(searchQuery, searchNewsPage)
         searchNews.postValue(handleSearchNewsResponse(response))
@@ -67,7 +65,7 @@ class NewsViewModel(
     }
 
     fun saveArticle(article: Article) = viewModelScope.launch {
-        newsRepository.upsert(article)
+        newsRepository.insert(article)
     }
 
     fun getSavedNews() = newsRepository.getSavedNews()

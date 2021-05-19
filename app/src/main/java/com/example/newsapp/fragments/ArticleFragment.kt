@@ -1,5 +1,6 @@
 package com.example.newsapp.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.webkit.WebViewClient
@@ -14,12 +15,12 @@ import kotlinx.android.synthetic.main.fragment_article.*
 class ArticleFragment : Fragment(R.layout.fragment_article) {
 
     lateinit var viewModel: NewsViewModel
-    val args: ArticleFragmentArgs by navArgs()
+    val articleFragmentArgs: ArticleFragmentArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = (activity as MainActivity).viewModel
-        val article = args.article
+        viewModel = (activity as MainActivity).vm
+        val article = articleFragmentArgs.article
         webView.apply {
             webViewClient = WebViewClient()
             loadUrl(article.url)
@@ -27,7 +28,18 @@ class ArticleFragment : Fragment(R.layout.fragment_article) {
 
         fab.setOnClickListener {
             viewModel.saveArticle(article)
-            Snackbar.make(view, "Article saved successfully", Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(view, "Saved article", Snackbar.LENGTH_SHORT).show()
+        }
+
+        share.setOnClickListener {
+            val sendIntent = Intent()
+            sendIntent.action = Intent.ACTION_SEND
+            val body = "Your body here"
+            val sub = "Your Subject"
+            sendIntent.putExtra(Intent.EXTRA_SUBJECT, "Sharing news from Smart News App")
+            sendIntent.putExtra(Intent.EXTRA_TEXT, article.title + "\n\n" + article.description + "\n\n" + article.url)
+            sendIntent.type = "text/plain"
+            startActivity(sendIntent)
         }
     }
 

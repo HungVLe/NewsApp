@@ -4,7 +4,7 @@ import androidx.room.TypeConverter
 import com.example.newsapp.models.Source
 
 
-class Converters {
+class Converter {
 
     @TypeConverter
     fun fromSource(source: Source): String {
