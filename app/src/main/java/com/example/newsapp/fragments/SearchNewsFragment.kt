@@ -1,8 +1,10 @@
 package com.example.newsapp.fragments
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,6 +24,7 @@ class SearchNewsFragment : Fragment(R.layout.fragment_search_news) {
     lateinit var newsAdapter: NewsAdapter
     val TAG = "SearchNewsFragment"
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = (activity as MainActivity).vm
@@ -53,6 +56,7 @@ class SearchNewsFragment : Fragment(R.layout.fragment_search_news) {
                 is Resource.Success -> {
                     hideProgressBar()
                     response.data?.let { newsResponse ->
+                        newsResponse.articles.removeIf { it.description == null }
                         newsAdapter.differ.submitList(newsResponse.articles)
                     }
                 }

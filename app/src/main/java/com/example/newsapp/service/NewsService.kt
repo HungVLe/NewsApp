@@ -13,8 +13,8 @@ interface NewsService {
     suspend fun getBreakingNews(
         @Query("country")
         countryCode: String = "us",
-        @Query("page")
-        pageNumber: Int = 1,
+        @Query("pageSize")
+        pageSize : Int = 100,
         @Query("apiKey")
         apiKey: String = API_KEY
     ): Response<NewsResponse>
@@ -23,8 +23,6 @@ interface NewsService {
     suspend fun searchForNews(
         @Query("q")
         searchQuery: String,
-        @Query("page")
-        pageNumber: Int = 1,
         @Query("apiKey")
         apiKey: String = API_KEY
     ): Response<NewsResponse>

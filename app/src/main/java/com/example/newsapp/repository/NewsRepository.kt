@@ -8,11 +8,11 @@ import com.example.newsapp.service.RetrofitService
 class NewsRepository(
     val db: ArticleDB
 ) {
-    suspend fun getBreakingNews(countryCode: String, pageNumber: Int) =
-        RetrofitService.newsApi.getBreakingNews(countryCode, pageNumber)
+    suspend fun getBreakingNews(countryCode: String) =
+        RetrofitService.newsApi.getBreakingNews(countryCode)
 
-    suspend fun searchNews(searchQuery: String, pageNumber: Int) =
-        RetrofitService.newsApi.searchForNews(searchQuery, pageNumber)
+    suspend fun searchNews(searchQuery: String) =
+        RetrofitService.newsApi.searchForNews(searchQuery)
 
     suspend fun insert(article: Article) = db.getArticleDao().insert(article)
 

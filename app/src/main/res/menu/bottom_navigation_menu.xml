@@ -13,4 +13,8 @@
         android:title="Search News"
         android:icon="@drawable/ic_baseline_search_24" />
 
+    <item android:id="@+id/recommendNewsFragment"
+        android:title="Recommend News"
+        android:icon="@drawable/recommend" />
+
 </menu>

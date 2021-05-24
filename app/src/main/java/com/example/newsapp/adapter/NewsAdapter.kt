@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.newsapp.R
 import com.example.newsapp.models.Article
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_article_preview.view.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -41,15 +41,21 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
         return differ.currentList.size
     }
 
+    @SuppressLint("ResourceAsColor")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val article = differ.currentList[position]
-        holder.itemView.apply {
-            Picasso.with(context).load(article.urlToImage).into(ivArticleImage)
-            tvSource.text = article.source?.name
-            tvTitle.text = article.title
-            tvDate.text = article.publishedAt?.let { unixTime(it) }
-            setOnClickListener {
-                onItemClickListener?.let { it(article) }
+        if (article.description != null) {
+            holder.itemView.apply {
+                if (article.urlToImage != null) {
+                    Glide.with(this).load(article.urlToImage).into(ivArticleImage)
+                }
+                tvSource.text = article.source?.name
+                tvTitle.text = article.title
+                tvDescription.text = article.description
+                tvPublishedAt.text = article.publishedAt?.let { unixTime(it) }
+                setOnClickListener {
+                    onItemClickListener?.let { it(article) }
+                }
             }
         }
     }
