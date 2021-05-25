@@ -4,6 +4,17 @@ class Constants {
     companion object {
         const val API_KEY = "eb9250ba5c9f4a36bc504b6451a79a9c"
         const val BASE_URL = "https://newsapi.org"
-        const val QUERY_PAGE_SIZE = 20
+        val TAB_LIST: List<String> = listOf(
+            "business",
+            "entertainment",
+            "general",
+            "health",
+            "science",
+            "sports",
+            "technology",
+            "bbc-news",
+            "cnn",
+            "fox-news"
+        )
     }
 }

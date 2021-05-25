@@ -47,4 +47,12 @@
             android:name="article"
             app:argType="com.example.newsapp.models.Article" />
     </fragment>
+    <fragment
+        android:id="@+id/recommendNewsFragment"
+        android:name="com.example.newsapp.fragments.RecommendNewsFragment"
+        android:label="RecommendNewsFragment" >
+        <action
+            android:id="@+id/action_recommendNewsFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
 </navigation>

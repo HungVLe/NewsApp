@@ -67,7 +67,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
     }
 
     private fun unixTime(timex: String): String? {
-        val zonedFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
+        val zonedFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:")
         val date = zonedFormat.parse(timex)
         @SuppressLint("SimpleDateFormat") val sdf = SimpleDateFormat("MM/dd/yyyy HH:mm")
         sdf.timeZone = TimeZone.getDefault()

@@ -26,4 +26,26 @@ interface NewsService {
         @Query("apiKey")
         apiKey: String = API_KEY
     ): Response<NewsResponse>
+
+    @GET("v2/top-headlines")
+    suspend fun getCategoryTabNews(
+        @Query("category")
+        category : String,
+        @Query("country")
+        countryCode: String = "us",
+        @Query("pageSize")
+        pageSize : Int = 100,
+        @Query("apiKey")
+        apiKey: String = API_KEY
+    ): Response<NewsResponse>
+
+    @GET("v2/top-headlines")
+    suspend fun getSourceTabNews(
+        @Query("sources")
+        sources: String,
+        @Query("pageSize")
+        pageSize : Int = 100,
+        @Query("apiKey")
+        apiKey: String = API_KEY
+    ): Response<NewsResponse>
 }
