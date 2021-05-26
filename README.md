@@ -31,6 +31,8 @@ To Setup the project on Android Studio, we recommend using the newest version of
 
 ## Screenshots
 
+![](./app/src/main/res/drawable/Main.png)
+
 ## Contributors
 
 | Team Trinity               | GitHub Repositories                           |
