@@ -4,7 +4,6 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -14,17 +13,15 @@ import com.example.newsapp.R
 import com.example.newsapp.adapter.NewsAdapter
 import com.example.newsapp.viewmodel.NewsViewModel
 import com.example.newsapp.vo.Resource
-import kotlinx.android.synthetic.main.fragment_breaking_news.*
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.launch
+import kotlinx.android.synthetic.main.fragment_tab.*
 
-class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
+class TabNewsFragment(position: Int) : Fragment(R.layout.fragment_tab) {
 
     lateinit var viewModel: NewsViewModel
     lateinit var newsAdapter: NewsAdapter
 
-    val TAG = "BreakingNewsFragment"
+    val TAG = "TabNewsFragment"
+    var pos :Int = position
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,25 +34,12 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
                 putSerializable("article", it)
             }
             findNavController().navigate(
-                R.id.action_breakingNewsFragment_to_articleFragment,
+                R.id.action_recommendNewsFragment_to_articleFragment,
                 bundle
             )
         }
 
-        var job: Job? = null
-        btnRefresh.setOnClickListener {
-            job?.cancel()
-            job = MainScope().launch {
-                viewModel.getBreakingNews("us")
-                Toast.makeText(
-                    activity,
-                    "Refreshed.",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        }
-
-        viewModel.breakingNews.observe(viewLifecycleOwner, { response ->
+        viewModel.tabNews[pos].observe(viewLifecycleOwner, { response ->
             when (response) {
                 is Resource.Success -> {
                     hideProgressBar()
@@ -87,7 +71,7 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
 
     private fun setupRecyclerView() {
         newsAdapter = NewsAdapter()
-        rvBreakingNews.apply {
+        rvTabNews.apply {
             adapter = newsAdapter
             layoutManager = LinearLayoutManager(activity)
         }
