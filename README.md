@@ -31,7 +31,7 @@ To Setup the project on Android Studio, we recommend using the newest version of
 
 ## Screenshots
 
-![](./app/src/main/res/drawable/Main.png)
+<img src="./app/src/main/res/drawable/Main.png" alt="drawing" width="200"/>
 
 ## Contributors
 
