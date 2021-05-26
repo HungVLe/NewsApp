@@ -6,6 +6,7 @@
 * [Components](#components)
 * [Installation](#installation)
 * [Screenshots](#screenshots)
+* [Contributors](#contributors)
 * [Status](#status)
 
 ## General info
@@ -29,6 +30,14 @@ Here are the main components:
 To Setup the project on Android Studio, we recommend using the newest version of Android Studio, which currently, is Android 4.2.1 to Windows. For this project, it is also recommended that your locale has Java 11 installed; when Java 8 was the only JDK in the build configuration, the build console returned an error. Then after installing the Android studio Version, make sure that the ADB emulator is set up correctly too so you can preview that application. From the GitHub link below, you can clone the project to your directory. Sync the gradle under the module and app gradle, which will download the dependencies requirements, and then click build app. When it says gradle invocation finished with 0 errors, then you can click run app, which will launch the app on the ADB emulator.
 
 ## Screenshots
+
+## Contributors
+
+| Team Trinity               | GitHub Repositories                           |
+|----------------------------|-----------------------------------------------|
+| Archana Shokeen (015237378)| https://github.com/archanashokeeniitg/NewsApp |
+| Eric Cheng (015300506)     | https://github.com/eccx400/NewsApp-1          |
+| Hung Le (010306088)        | https://github.com/HungVLe/NewsApp            |
 
 ## Technologies
 
