@@ -3,6 +3,7 @@
 
 ## Table of contents
 * [General info](#general-info)
+* [Architecture Diagram](#architecture-diagram)
 * [Components](#components)
 * [Installation](#installation)
 * [Screenshots](#screenshots)
@@ -12,6 +13,10 @@
 ## General info
 
 SmartNews is a news app that allows users to read news easily on their mobile device. Currently built for Android in Kotlin, it has multiple features such as news recommendation, news search, and bookmarking user’s favorite news for them to read later.
+
+## Architecture Diagram
+
+<img src="./app/src/main/res/drawable/Architectural Diagram.png" alt="drawing" width="600"/>
 
 ## Components
 
