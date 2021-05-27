@@ -16,7 +16,7 @@ SmartNews is a news app that allows users to read news easily on their mobile de
 
 ## Architecture Diagram
 
-<img src="./app/src/main/res/drawable/Architectural Diagram.png" alt="drawing" width="600"/>
+<img src="./app/img/archdiagram.jpg" alt="drawing" width="600"/>
 
 ## Components
 
@@ -36,7 +36,7 @@ To Setup the project on Android Studio, we recommend using the newest version of
 
 ## Screenshots
 
-<img src="./app/src/main/res/drawable/Main.png" alt="drawing" width="200"/>
+<img src="./app/img/main.jpg" alt="drawing" width="200"/>
 
 ## Contributors
 
