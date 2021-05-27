@@ -40,9 +40,9 @@ To Setup the project on Android Studio, we recommend using the newest version of
 ## Screenshots
 
 <img src="./app/img/main.jpg" alt="drawing" width="200"/>
-<img src="https://user-images.githubusercontent.com/66199202/119763536-92924a80-be64-11eb-8cc4-3f84d6ce742a.png" alt="drawing" width="200"/>
-<img src="https://user-images.githubusercontent.com/66199202/119763539-945c0e00-be64-11eb-9477-5c38e62bd018.png" alt="drawing" width="200"/>
-<img src="https://user-images.githubusercontent.com/66199202/119763540-94f4a480-be64-11eb-9491-7b93a8752bf7.png" alt="drawing" width="200"/>
+<img src="https://user-images.githubusercontent.com/66199202/119763536-92924a80-be64-11eb-8cc4-3f84d6ce742a.png" alt="drawing" />
+<img src="https://user-images.githubusercontent.com/66199202/119763539-945c0e00-be64-11eb-9477-5c38e62bd018.png" alt="drawing" />
+<img src="https://user-images.githubusercontent.com/66199202/119763540-94f4a480-be64-11eb-9491-7b93a8752bf7.png" alt="drawing" />
 
 ## Contributors
 
